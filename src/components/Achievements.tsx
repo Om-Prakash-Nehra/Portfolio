@@ -10,8 +10,18 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="relative py-20 px-6 md:px-12 text-white overflow-hidden">
+      {/* Background and overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/bg4.jpg"
+          alt="Background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-blue-950/90" />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-14 text-white drop-shadow-lg">
           🏆 My Achievements
         </h2>

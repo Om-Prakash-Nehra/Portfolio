@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   FaHtml5,
@@ -15,10 +14,10 @@ import {
   FaGitAlt,
   FaGithub,
   FaTerminal,
-  FaTools,
   FaWindows,
   FaCode,
   FaWrench,
+  FaTools,
 } from "react-icons/fa";
 
 interface Skill {
@@ -30,10 +29,6 @@ interface SkillCategory {
   name: string;
   icon: React.ReactNode;
   skills: Skill[];
-}
-
-interface SkillsGridProps {
-  categories?: SkillCategory[];
 }
 
 const defaultCategories: SkillCategory[] = [
@@ -84,10 +79,8 @@ const defaultCategories: SkillCategory[] = [
   },
 ];
 
-const SkillsGrid: React.FC<SkillsGridProps> = ({
-  categories = defaultCategories,
-}) => {
-  const [activeTab, setActiveTab] = useState(categories[0].name);
+const SkillsGrid: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(defaultCategories[0].name);
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -99,71 +92,76 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({
   };
 
   return (
-    <div className="w-full p-8 rounded-3xl backdrop-blur-md bg-white/5 shadow-2xl border border-white/20">
-      <h2 className="text-4xl font-extrabold mb-10 text-center text-white tracking-tight">
-        🚀 Skills & Expertise
-      </h2>
+    <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
+      <div className="w-full max-w-6xl mx-auto p-8 rounded-3xl backdrop-blur-md bg-white/5 shadow-2xl border border-white/20">
+        <h2 className="text-4xl font-extrabold mb-10 text-center text-white tracking-tight">
+          Skills & Expertise
+        </h2>
 
-      <Tabs
-        defaultValue={categories[0].name}
-        className="w-full"
-        onValueChange={setActiveTab}
-      >
-        <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-10">
-          {categories.map((category) => (
-            <TabsTrigger
-              key={category.name}
-              value={category.name}
-              className={`flex items-center gap-2 py-2 px-4 rounded-full text-sm transition-all duration-300 border
-                ${
-                  activeTab === category.name
-                    ? "bg-white/20 text-white border-white"
-                    : "hover:bg-white/10 text-white border-transparent"
-                }`}
-            >
-              {category.icon}
-              <span>{category.name}</span>
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <Tabs
+          defaultValue={defaultCategories[0].name}
+          className="w-full"
+          onValueChange={setActiveTab}
+        >
+          <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-10">
+            {defaultCategories.map((category) => (
+              <TabsTrigger
+                key={category.name}
+                value={category.name}
+                className={`flex items-center gap-2 py-2 px-4 rounded-full text-sm font-medium transition-all duration-300 border
+                  ${
+                    activeTab === category.name
+                      ? "bg-white/20 text-white border-white"
+                      : "hover:bg-white/10 text-white border-transparent"
+                  }`}
+              >
+                {category.icon}
+                <span>{category.name}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
 
-        <AnimatePresence mode="wait">
-          {categories.map(
-            (category) =>
-              activeTab === category.name && (
-                <TabsContent key={category.name} value={category.name} forceMount>
-                  <motion.div
-                    className="flex flex-wrap justify-center gap-6"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.4 }}
+          <AnimatePresence mode="wait">
+            {defaultCategories.map(
+              (category) =>
+                activeTab === category.name && (
+                  <TabsContent
+                    key={category.name}
+                    value={category.name}
+                    forceMount
                   >
-                    {category.skills.map((skill) => (
-                      <motion.div
-                      key={skill.name}
-                      variants={itemVariants}
-                      initial="hidden"
-                      animate="visible"
-                      whileHover={{
-                        scale: 1.1,
-                        boxShadow: "0 10px 30px rgba(255,255,255,0.2)",
-                        transition: { duration: 0.3 },
-                      }}
-                      className="w-[130px] h-[130px] rounded-2xl bg-white text-black backdrop-blur-lg border border-white/20 shadow-md flex flex-col items-center justify-center p-4 text-center hover:ring-2 hover:ring-blue-400 transition-all duration-300"
+                    <motion.div
+                      className="flex flex-wrap justify-center gap-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.4 }}
                     >
-                      <div className="text-4xl mb-2">{skill.icon}</div>
-                      <h3 className="text-sm font-medium">{skill.name}</h3>
+                      {category.skills.map((skill) => (
+                        <motion.div
+                          key={skill.name}
+                          variants={itemVariants}
+                          initial="hidden"
+                          animate="visible"
+                          whileHover={{
+                            scale: 1.1,
+                            boxShadow: "0 10px 30px rgba(255,255,255,0.2)",
+                            transition: { duration: 0.3 },
+                          }}
+                          className="w-[130px] h-[130px] rounded-2xl bg-white text-black backdrop-blur-lg border border-white/20 shadow-md flex flex-col items-center justify-center p-4 text-center hover:ring-2 hover:ring-blue-400 transition-all duration-300"
+                        >
+                          <div className="text-4xl mb-2">{skill.icon}</div>
+                          <h3 className="text-sm font-semibold">{skill.name}</h3>
+                        </motion.div>
+                      ))}
                     </motion.div>
-                    
-                    ))}
-                  </motion.div>
-                </TabsContent>
-              )
-          )}
-        </AnimatePresence>
-      </Tabs>
-    </div>
+                  </TabsContent>
+                )
+            )}
+          </AnimatePresence>
+        </Tabs>
+      </div>
+    </section>
   );
 };
 

@@ -70,7 +70,6 @@ const HomePage = () => {
       githubLink: "https://github.com/Om-Prakash-Nehra/Portfolio",
     },
   ];
-
   // Certifications data
   const certifications = [
     {
@@ -174,12 +173,12 @@ const HomePage = () => {
           </section>
 
           {/* About Section */}
-          <section id="about" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="about" className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <AboutMe />
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="skills" className="py-20 px-6 md:px-12 bg-transparent bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -188,14 +187,14 @@ const HomePage = () => {
               className="max-w-6xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
-                Skills
+
               </h2>
               <SkillsGrid />
             </motion.div>
           </section>
 
           {/* Projects Section */}
-          <section id="projects" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="projects" className="py-20 px-6 md:px-12 bg-transparent bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -217,7 +216,6 @@ const HomePage = () => {
                       features={project.features}
                       outcome={project.outcome}
                       githubLink={project.githubLink}
-                      demoLink={project.demoLink}
                     />
                   </motion.div>
                 ))}
@@ -226,7 +224,7 @@ const HomePage = () => {
           </section>
 
           {/* Certifications Section */}
-          <section id="certifications" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="certifications" className="py-20 px-6 md:px-12 bg-transparent bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -235,14 +233,13 @@ const HomePage = () => {
               className="max-w-6xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
-                Certifications
               </h2>
               <Certifications />
             </motion.div>
           </section>
 
           {/* Experience Section */}
-          <section id="experience" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="experience" className="py-20 px-6 md:px-12 bg-transparent bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -250,7 +247,7 @@ const HomePage = () => {
               variants={staggerContainer}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white ">
                 Experience
               </h2>
 
@@ -296,7 +293,7 @@ const HomePage = () => {
           </section>
 
           {/* Hackathons Section */}
-          <section id="hackathons" className="py-20 px-6 md:px-12 bg-transparent">
+          <section id="hackathons" className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -335,100 +332,97 @@ const HomePage = () => {
           </section>
 
           {/* Contact Section */}
-          <section id="contact" className="py-20 px-6 md:px-12 bg-transparent">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
-                📬 Get In Touch
-              </h2>
+          <section id="contact" className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={fadeInUp}
+    className="max-w-4xl mx-auto"
+  >
+    <h2 className="text-4xl font-bold mb-12 text-center text-white tracking-tight">
+      📬 Get In Touch
+    </h2>
 
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                className="rounded-2xl p-8 bg-white/5 backdrop-blur-md border border-white/10 shadow-lg"
-              >
-                <div className="flex flex-col items-center justify-center space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-white">
-                    {/* Email */}
-                    <motion.a
-                      whileHover={{ y: -4 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                      href="mailto:omprakashnehra078@gmail.com"
-                      className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
-                    >
-                      <Mail className="h-6 w-6 mb-2 text-blue-400" />
-                      <span className="font-medium">Email</span>
-                      <span className="text-sm opacity-70">
-                        omprakashnehra078@gmail.com
-                      </span>
-                    </motion.a>
+    <motion.div
+      whileHover={{ scale: 1.01 }}
+      transition={{ duration: 0.3 }}
+      className="rounded-3xl p-8 bg-white/5 backdrop-blur-md border border-white/10 shadow-xl"
+    >
+      <div className="flex flex-col items-center justify-center space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-white">
+          {/* Email */}
+          <motion.a
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            href="mailto:omprakashnehra078@gmail.com"
+            className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
+          >
+            <Mail className="h-6 w-6 mb-2 text-blue-400" />
+            <span className="font-semibold">Email</span>
+            <span className="text-sm opacity-70">
+              omprakashnehra078@gmail.com
+            </span>
+          </motion.a>
 
-                    {/* LinkedIn */}
-                    <motion.a
-                      whileHover={{ y: -4 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                      href="https://www.linkedin.com/in/om-prakash-nehra-695442252/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
-                    >
-                      <Linkedin className="h-6 w-6 mb-2 text-blue-500" />
-                      <span className="font-medium">LinkedIn</span>
-                      <span className="text-sm opacity-70">/om-prakash-nehra</span>
-                    </motion.a>
+          {/* LinkedIn */}
+          <motion.a
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            href="https://www.linkedin.com/in/om-prakash-nehra-695442252/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
+          >
+            <Linkedin className="h-6 w-6 mb-2 text-blue-500" />
+            <span className="font-semibold">LinkedIn</span>
+            <span className="text-sm opacity-70">/om-prakash-nehra</span>
+          </motion.a>
 
-                    {/* GitHub */}
-                    <motion.a
-                      whileHover={{ y: -4 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                      href="https://github.com/Om-Prakash-Nehra"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
-                    >
-                      <Github className="h-6 w-6 mb-2 text-gray-300" />
-                      <span className="font-medium">GitHub</span>
-                      <span className="text-sm opacity-70">/Om-Prakash-Nehra</span>
-                    </motion.a>
-                  </div>
+          {/* GitHub */}
+          <motion.a
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            href="https://github.com/Om-Prakash-Nehra"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-4 rounded-xl hover:bg-white/10 transition-colors text-center"
+          >
+            <Github className="h-6 w-6 mb-2 text-gray-300" />
+            <span className="font-semibold">GitHub</span>
+            <span className="text-sm opacity-70">/Om-Prakash-Nehra</span>
+          </motion.a>
+        </div>
 
-                  {/* Resume Download */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Button
-                      size="lg"
-                      className="mt-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-purple-600 hover:to-blue-500"
-                      onClick={() => {
-                        const link = document.createElement("a");
-                        link.href = "/OmPrakashNehra.pdf";
-                        link.download = "OmPrakashNehra.pdf";
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                      }}
-                    >
-                      <Download className="mr-2 h-4 w-4" /> Download Resume
-                    </Button>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </section>
+        {/* Resume Download */}
+        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+          <Button
+            size="lg"
+            className="mt-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-purple-600 hover:to-blue-500"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "/OmPrakashNehra.pdf";
+              link.download = "OmPrakashNehra.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
+            <Download className="mr-2 h-4 w-4" /> Download Resume
+          </Button>
+        </motion.div>
+      </div>
+    </motion.div>
+  </motion.div>
+</section>
 
-          {/* Footer */}
-          <footer className="py-8 px-6 md:px-12 bg-black/10 backdrop-blur-sm text-center border-t border-white/10">
-            <p className="text-white/70">
-              &copy; {new Date().getFullYear()} Om Prakash Nehra. All rights
-              reserved.
-            </p>
-          </footer>
+{/* Footer */}
+<footer className="py-8 px-6 md:px-12 bg-[#0e0e16] border-t border-white/10 backdrop-blur-sm text-center">
+  <p className="text-white/60 text-sm tracking-wide">
+    &copy; {new Date().getFullYear()} Om Prakash Nehra. All rights reserved.
+  </p>
+</footer>
+ 
         </main>
       </div>
     </div>

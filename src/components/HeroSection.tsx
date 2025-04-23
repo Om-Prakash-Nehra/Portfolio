@@ -7,7 +7,6 @@ interface HeroSectionProps {
   title?: string;
   tagline?: string;
   introduction?: string;
-  backgroundImage?: string;
   onExploreClick?: () => void;
   onDownloadResumeClick?: () => void;
 }
@@ -16,7 +15,6 @@ const HeroSection = ({
   title = "Full Stack Web Developer",
   tagline = "Blending Code, Creativity, and Insights",
   introduction = "Transforming ideas into digital experiences. I specialize in crafting responsive full-stack applications that are fast, functional, and visually engaging—bridging the gap between creativity and code.",
-  backgroundImage = "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200&q=80",
   onExploreClick = () => {
     const section = document.getElementById("projects");
     if (section) {
@@ -33,11 +31,9 @@ const HeroSection = ({
   },
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center">
-      {/* Background */}
-
+    <section className="relative h-screen w-full flex items-center justify-center bg-slate-900 text-white">
       {/* Content */}
-      <div className="relative z-10 max-w-6xl px-4 md:px-8 text-white text-center md:text-left">
+      <div className="relative z-10 max-w-6xl px-4 md:px-8 text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

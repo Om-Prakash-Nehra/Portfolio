@@ -64,10 +64,20 @@ const ProjectCard = ({
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="h-full"
+      className="h-full relative rounded-xl overflow-hidden border border-white/10"
     >
-      <Card className="h-full flex flex-col overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 bg-white text-black shadow-md">
-        <div className="relative overflow-hidden h-48">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/bg4.jpg"
+          alt="Background"
+          className="w-full h-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-blue-950/90" />
+      </div>
+
+      <Card className="relative z-10 h-full flex flex-col text-white backdrop-blur-md bg-transparent border-none shadow-none">
+        <div className="relative overflow-hidden h-36">
           <img
             src={imageUrl}
             alt={title}
@@ -82,7 +92,7 @@ const ProjectCard = ({
               <Badge
                 key={index}
                 variant="secondary"
-                className="text-xs flex items-center gap-1 px-2 py-1"
+                className="text-xs flex items-center gap-1 px-2 py-1 bg-slate-700/40 text-white border border-white/10"
               >
                 {iconMap[tech] || null}
                 {tech}
@@ -92,14 +102,14 @@ const ProjectCard = ({
         </CardHeader>
 
         <CardContent className="flex-grow">
-          <CardDescription className="text-sm mb-4">
+          <CardDescription className="text-sm text-slate-300 mb-4">
             {description}
           </CardDescription>
 
           <div className="space-y-2">
             <div>
-              <h4 className="text-sm font-semibold">Key Features:</h4>
-              <ul className="text-xs text-muted-foreground list-disc pl-4 mt-1">
+              <h4 className="text-sm font-semibold text-white">Key Features:</h4>
+              <ul className="text-xs text-slate-400 list-disc pl-4 mt-1">
                 {features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
@@ -107,16 +117,16 @@ const ProjectCard = ({
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold">Outcome:</h4>
-              <p className="text-xs text-muted-foreground mt-1">{outcome}</p>
+              <h4 className="text-sm font-semibold text-white">Outcome:</h4>
+              <p className="text-xs text-slate-400 mt-1">{outcome}</p>
             </div>
           </div>
         </CardContent>
 
-        <CardFooter className="flex justify-center pt-2 border-t">
+        <CardFooter className="flex justify-center pt-2 border-t border-white/10">
           <Button
             size="sm"
-            className="bg-gray-300 text-black hover:bg-gray-200 transition"
+            className="bg-blue-500 hover:bg-blue-600 text-white transition"
             asChild
           >
             <a
