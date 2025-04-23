@@ -45,44 +45,43 @@ const AboutMe = () => {
 
         {/* Education Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-          {[
-            {
-              icon: <School className="text-yellow-400 w-6 h-6 mb-2" />,
-              title: "Matriculation",
-              school: "SMP International High School, Hyderabad",
-              score: "GPA: 9.2",
-              duration: "2016 – 2019",
-            },
-            {
-              icon: <User className="text-pink-400 w-6 h-6 mb-2" />,
-              title: "Intermediate",
-              school: "Sri Abhida Institute, Hyderabad",
-              score: "Percentage: 85.8%",
-              duration: "2019 – 2021",
-            },
-            {
-              icon: <GraduationCap className="text-blue-400 w-6 h-6 mb-2" />,
-              title: "B.Tech CSE",
-              school: "Lovely Professional University, Punjab",
-              score: "CGPA: 7.12 (Ongoing)",
-              duration: "2022 – Present",
-            },
-          ].map((edu, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="bg-slate-800 rounded-xl p-5 shadow-md text-center border border-white/10"
-            >
-              <div className="flex justify-center">{edu.icon}</div>
-              <h3 className="text-xl font-semibold mb-1 text-white">{edu.title}</h3>
-              <p className="text-sm text-slate-400">{edu.school}</p>
-              <p className="text-sm text-slate-400">{edu.score}</p>
-              <p className="text-sm text-slate-400">{edu.duration}</p>
-            </motion.div>
-          ))}
-        </div>
-
+  {[
+    {
+      icon: <School className="text-yellow-400 w-6 h-6 mb-2" />,
+      title: "Matriculation",
+      school: "SMP International High School, Hyderabad",
+      score: "GPA: 9.2",
+      duration: "2016 – 2019",
+    },
+    {
+      icon: <User className="text-pink-400 w-6 h-6 mb-2" />,
+      title: "Intermediate",
+      school: "Sri Abhida Institute, Hyderabad",
+      score: "Percentage: 85.8%",
+      duration: "2019 – 2021",
+    },
+    {
+      icon: <GraduationCap className="text-blue-400 w-6 h-6 mb-2" />,
+      title: "B.Tech CSE",
+      school: "Lovely Professional University, Punjab",
+      score: "CGPA: 7.12 (Ongoing)",
+      duration: "2022 – Present",
+    },
+  ].map((edu, idx) => (
+    <motion.div
+      key={idx}
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="bg-white/5 rounded-xl p-6 border border-white/10 backdrop-blur-md text-center"
+    >
+      <div className="flex justify-center">{edu.icon}</div>
+      <h3 className="text-xl font-semibold mb-1 text-white">{edu.title}</h3>
+      <p className="text-sm text-slate-400">{edu.school}</p>
+      <p className="text-sm text-slate-400">{edu.score}</p>
+      <p className="text-sm text-slate-400">{edu.duration}</p>
+    </motion.div>
+  ))}
+</div>
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
           <motion.div
