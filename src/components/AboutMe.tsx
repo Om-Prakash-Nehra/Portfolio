@@ -1,12 +1,25 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { FaLaptopCode, FaUsers, FaTools } from "react-icons/fa";
+import { GraduationCap, School, User } from "lucide-react";
 
 const AboutMe = () => {
   return (
-    <section className="relative text-white p-8 rounded-2xl shadow-2xl max-w-5xl mx-auto mt-16 overflow-hidden border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
-      <div className="relative z-10 backdrop-blur-sm">
+    <section className="relative text-white p-8 rounded-2xl shadow-2xl max-w-5xl mx-auto mt-16 overflow-hidden border border-white/10">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/bg4.jpg"
+          alt="Background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 backdrop-blur-md">
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -17,7 +30,7 @@ const AboutMe = () => {
           About Me
         </motion.h2>
 
-        {/* Paragraph */}
+        {/* Introduction */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -30,9 +43,48 @@ const AboutMe = () => {
           <span className="text-green-300 font-medium"> React, Node.js, PHP</span>, and more.
         </motion.p>
 
+        {/* Education Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+          {[
+            {
+              icon: <School className="text-yellow-400 w-6 h-6 mb-2" />,
+              title: "Matriculation",
+              school: "SMP International High School, Hyderabad",
+              score: "GPA: 9.2",
+              duration: "2016 – 2019",
+            },
+            {
+              icon: <User className="text-pink-400 w-6 h-6 mb-2" />,
+              title: "Intermediate",
+              school: "Sri Abhida Institute, Hyderabad",
+              score: "Percentage: 85.8%",
+              duration: "2019 – 2021",
+            },
+            {
+              icon: <GraduationCap className="text-blue-400 w-6 h-6 mb-2" />,
+              title: "B.Tech CSE",
+              school: "Lovely Professional University, Punjab",
+              score: "CGPA: 7.12 (Ongoing)",
+              duration: "2022 – Present",
+            },
+          ].map((edu, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="bg-slate-800 rounded-xl p-5 shadow-md text-center border border-white/10"
+            >
+              <div className="flex justify-center">{edu.icon}</div>
+              <h3 className="text-xl font-semibold mb-1 text-white">{edu.title}</h3>
+              <p className="text-sm text-slate-400">{edu.school}</p>
+              <p className="text-sm text-slate-400">{edu.score}</p>
+              <p className="text-sm text-slate-400">{edu.duration}</p>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-          {/* Feature 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +98,6 @@ const AboutMe = () => {
             </p>
           </motion.div>
 
-          {/* Feature 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +111,6 @@ const AboutMe = () => {
             </p>
           </motion.div>
 
-          {/* Feature 3 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
