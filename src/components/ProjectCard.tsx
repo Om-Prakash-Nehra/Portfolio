@@ -94,17 +94,7 @@ const ProjectCard = ({
             </a>
           </Button>
 
-          <Button variant="default" size="sm" asChild>
-            <a
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1"
-            >
-              <ExternalLink size={16} />
-              <span>Demo</span>
-            </a>
-          </Button>
+          
         </CardFooter>
       </Card>
     </motion.div>

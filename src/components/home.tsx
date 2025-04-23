@@ -36,8 +36,7 @@ const HomePage = () => {
       ],
       outcome:
         "Enabled students to explore internship opportunities with ease and clarity.",
-      githubLink: "https://github.com",
-      demoLink: "https://demo.com",
+      githubLink: "https://github.com/Om-Prakash-Nehra/InternConnect-",
     },
     {
       id: 2,
@@ -54,7 +53,6 @@ const HomePage = () => {
       outcome:
         "Supported users in making better health choices through personalized tracking.",
       githubLink: "https://github.com",
-      demoLink: "https://demo.com",
     },
     {
       id: 3,
@@ -70,8 +68,7 @@ const HomePage = () => {
       ],
       outcome:
         "Displayed professional journey and projects in an elegant and responsive layout.",
-      githubLink: "https://github.com",
-      demoLink: "https://demo.com",
+      githubLink: "https://github.com/Om-Prakash-Nehra/Portfolio",
     },
   ];
   
@@ -418,7 +415,6 @@ const HomePage = () => {
     </motion.div>
   </motion.div>
 </section>
-
 
         {/* Footer */}
         <footer className="py-8 px-6 md:px-12 bg-muted/50 text-center">
