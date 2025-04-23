@@ -3,21 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --foreground: 210 40% 98%;
-    --radius: 0.5rem;
-  }
-
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply text-foreground;
-    background-image: url("/background.jpg"); 
+    @apply text-white;
+    background-image: url('/Background.jpg'); /* Must be in public folder */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-  }  
+    min-height: 100vh;
+  }
+
+  /* Apply position only where needed */
+  body > * {
+    position: relative;
+  }
 }

@@ -18,6 +18,7 @@ import {
   FaTools,
   FaWindows,
   FaCode,
+  FaWrench,
 } from "react-icons/fa";
 
 interface Skill {
@@ -40,39 +41,45 @@ const defaultCategories: SkillCategory[] = [
     name: "Frontend",
     icon: <FaCode className="h-5 w-5" />,
     skills: [
-      { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-xl" /> },
-      { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-xl" /> },
-      { name: "JavaScript", icon: <FaJs className="text-yellow-500 text-xl" /> },
-      { name: "React.js", icon: <FaReact className="text-cyan-400 text-xl" /> },
-      { name: "Angular", icon: <FaAngular className="text-red-500 text-xl" /> },
+      { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-2xl" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-2xl" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400 text-2xl" /> },
+      { name: "React.js", icon: <FaReact className="text-cyan-400 text-2xl" /> },
+      { name: "Angular", icon: <FaAngular className="text-red-500 text-2xl" /> },
     ],
   },
   {
     name: "Backend",
     icon: <FaTools className="h-5 w-5" />,
     skills: [
-      { name: "Node.js", icon: <FaNodeJs className="text-green-600 text-xl" /> },
-      { name: "PHP", icon: <FaPhp className="text-indigo-500 text-xl" /> },
-      { name: "Laravel", icon: <FaLaravel className="text-red-600 text-xl" /> },
+      { name: "Node.js", icon: <FaNodeJs className="text-green-600 text-2xl" /> },
+      { name: "PHP", icon: <FaPhp className="text-indigo-500 text-2xl" /> },
+      { name: "Laravel", icon: <FaLaravel className="text-red-600 text-2xl" /> },
     ],
   },
   {
     name: "Databases",
     icon: <FaDatabase className="h-5 w-5" />,
     skills: [
-      { name: "MySQL", icon: <FaDatabase className="text-blue-500 text-xl" /> },
-      { name: "MongoDB", icon: <FaDatabase className="text-green-500 text-xl" /> },
-      { name: "PostgreSQL", icon: <FaDatabase className="text-blue-800 text-xl" /> },
+      { name: "MySQL", icon: <FaDatabase className="text-blue-500 text-2xl" /> },
+      { name: "MongoDB", icon: <FaDatabase className="text-green-500 text-2xl" /> },
+      { name: "PostgreSQL", icon: <FaDatabase className="text-blue-800 text-2xl" /> },
     ],
   },
   {
     name: "Dev Tools",
-    icon: <FaTools className="h-5 w-5" />,
+    icon: <FaWrench className="h-5 w-5" />,
     skills: [
-      { name: "Git", icon: <FaGitAlt className="text-orange-500 text-xl" /> },
-      { name: "GitHub", icon: <FaGithub className="text-gray-700 text-xl" /> },
-      { name: "VS Code", icon: <FaTerminal className="text-blue-500 text-xl" /> },
-      { name: "XAMPP", icon: <FaWindows className="text-orange-400 text-xl" /> },
+      { name: "Git", icon: <FaGitAlt className="text-orange-500 text-2xl" /> },
+      { name: "GitHub", icon: <FaGithub className="text-gray-300 text-2xl" /> },
+    ],
+  },
+  {
+    name: "Utilities",
+    icon: <FaTerminal className="h-5 w-5" />,
+    skills: [
+      { name: "VS Code", icon: <FaTerminal className="text-blue-500 text-2xl" /> },
+      { name: "XAMPP", icon: <FaWindows className="text-orange-400 text-2xl" /> },
     ],
   },
 ];
@@ -92,24 +99,27 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({
   };
 
   return (
-    <div className="w-full p-6 rounded-lg bg-gradient-to-br from-[#4e5067] to-[#393b4d]">
-      <h2 className="text-3xl font-bold mb-8 text-center text-white">
-        Skills & Expertise
+    <div className="w-full p-8 rounded-3xl backdrop-blur-md bg-white/5 shadow-2xl border border-white/20">
+      <h2 className="text-4xl font-extrabold mb-10 text-center text-white tracking-tight">
+        🚀 Skills & Expertise
       </h2>
+
       <Tabs
         defaultValue={categories[0].name}
         className="w-full"
         onValueChange={setActiveTab}
       >
-        <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8">
+        <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-10">
           {categories.map((category) => (
             <TabsTrigger
               key={category.name}
               value={category.name}
-              className={`flex items-center gap-2 py-3 px-4 transition-all duration-300 rounded-md border border-transparent
-                ${activeTab === category.name
-                  ? "bg-white/20 text-white font-semibold border-white shadow-inner"
-                  : "hover:bg-white/10 text-white"}`}
+              className={`flex items-center gap-2 py-2 px-4 rounded-full text-sm transition-all duration-300 border
+                ${
+                  activeTab === category.name
+                    ? "bg-white/20 text-white border-white"
+                    : "hover:bg-white/10 text-white border-transparent"
+                }`}
             >
               {category.icon}
               <span>{category.name}</span>
@@ -123,7 +133,7 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({
               activeTab === category.name && (
                 <TabsContent key={category.name} value={category.name} forceMount>
                   <motion.div
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+                    className="flex flex-wrap justify-center gap-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -131,27 +141,21 @@ const SkillsGrid: React.FC<SkillsGridProps> = ({
                   >
                     {category.skills.map((skill) => (
                       <motion.div
-                        key={skill.name}
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
-                          transition: { duration: 0.3 },
-                        }}
-                      >
-                        <motion.div
-                          className="h-full bg-white/90 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:ring-2 hover:ring-blue-300 transition-all duration-300"
-                        >
-                          <CardContent className="flex flex-col items-center justify-center p-6 h-full">
-                            <div className="text-3xl mb-2">{skill.icon}</div>
-                            <h3 className="font-medium text-center text-gray-800">
-                              {skill.name}
-                            </h3>
-                          </CardContent>
-                        </motion.div>
-                      </motion.div>
+                      key={skill.name}
+                      variants={itemVariants}
+                      initial="hidden"
+                      animate="visible"
+                      whileHover={{
+                        scale: 1.1,
+                        boxShadow: "0 10px 30px rgba(255,255,255,0.2)",
+                        transition: { duration: 0.3 },
+                      }}
+                      className="w-[130px] h-[130px] rounded-2xl bg-white text-black backdrop-blur-lg border border-white/20 shadow-md flex flex-col items-center justify-center p-4 text-center hover:ring-2 hover:ring-blue-400 transition-all duration-300"
+                    >
+                      <div className="text-4xl mb-2">{skill.icon}</div>
+                      <h3 className="text-sm font-medium">{skill.name}</h3>
+                    </motion.div>
+                    
                     ))}
                   </motion.div>
                 </TabsContent>

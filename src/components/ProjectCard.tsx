@@ -9,8 +9,35 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  FaReact,
+  FaPhp,
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiTypescript,
+  SiMysql,
+  SiAngular,
+  SiTailwindcss,
+  SiFramer,
+  SiJavascript,
+} from "react-icons/si";
+
+// Icon map for tech stack
+const iconMap: Record<string, JSX.Element> = {
+  "React": <FaReact className="text-cyan-400" />,
+  "React.js": <FaReact className="text-cyan-400" />,
+  "C++": <SiCplusplus className="text-blue-600" />,
+  "PHP": <FaPhp className="text-indigo-500" />,
+  "TypeScript": <SiTypescript className="text-blue-500" />,
+  "JavaScript": <SiJavascript className="text-yellow-300" />,
+  "MySQL": <SiMysql className="text-orange-400" />,
+  "Angular": <SiAngular className="text-red-500" />,
+  "Tailwind CSS": <SiTailwindcss className="text-teal-400" />,
+  "Framer Motion": <SiFramer className="text-pink-400" />,
+};
 
 interface ProjectCardProps {
   title?: string;
@@ -31,15 +58,15 @@ const ProjectCard = ({
   outcome = "The outcome and impact of this project.",
   githubLink = "#",
   demoLink = "#",
-  imageUrl, 
+  imageUrl,
 }: ProjectCardProps) => {
   return (
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="h-full bg-background"
+      className="h-full"
     >
-      <Card className="h-full flex flex-col overflow-hidden border-2 hover:border-primary/50 transition-all duration-300">
+      <Card className="h-full flex flex-col overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 bg-white text-black shadow-md">
         <div className="relative overflow-hidden h-48">
           <img
             src={imageUrl}
@@ -52,7 +79,12 @@ const ProjectCard = ({
           <CardTitle className="text-xl font-bold">{title}</CardTitle>
           <div className="flex flex-wrap gap-1 mt-2">
             {techStack.map((tech, index) => (
-              <Badge key={index} variant="secondary" className="text-xs">
+              <Badge
+                key={index}
+                variant="secondary"
+                className="text-xs flex items-center gap-1 px-2 py-1"
+              >
+                {iconMap[tech] || null}
                 {tech}
               </Badge>
             ))}
@@ -81,8 +113,12 @@ const ProjectCard = ({
           </div>
         </CardContent>
 
-        <CardFooter className="flex justify-between pt-2 border-t">
-          <Button variant="outline" size="sm" asChild>
+        <CardFooter className="flex justify-center pt-2 border-t">
+          <Button
+            size="sm"
+            className="bg-gray-300 text-black hover:bg-gray-200 transition"
+            asChild
+          >
             <a
               href={githubLink}
               target="_blank"
@@ -93,8 +129,6 @@ const ProjectCard = ({
               <span>Code</span>
             </a>
           </Button>
-
-          
         </CardFooter>
       </Card>
     </motion.div>

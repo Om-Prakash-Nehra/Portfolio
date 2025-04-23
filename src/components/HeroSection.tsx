@@ -15,7 +15,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   title = "Full Stack Web Developer",
   tagline = "Blending Code, Creativity, and Insights",
-  introduction = "I'm a B.Tech CSE 3rd year student, a full stack web developer passionate about building end-to-end web solutions, analyzing data to uncover insights, and designing intuitive user interfaces.",
+  introduction = "Transforming ideas into digital experiences. I specialize in crafting responsive full-stack applications that are fast, functional, and visually engaging—bridging the gap between creativity and code.",
   backgroundImage = "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200&q=80",
   onExploreClick = () => {
     const section = document.getElementById("projects");
@@ -33,7 +33,7 @@ const HeroSection = ({
   },
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center">
       {/* Background */}
 
       {/* Content */}
