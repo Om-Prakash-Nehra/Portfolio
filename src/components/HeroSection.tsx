@@ -47,7 +47,7 @@ const HeroSection = ({
           {/* Profile */}
           <div className="relative">
             <img
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Profile"
               className="w-40 h-40 rounded-full border-4 border-white shadow-md object-cover"
             />
