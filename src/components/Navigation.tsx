@@ -11,9 +11,7 @@ import {
   Mail,
   Github,
   Linkedin,
-  Download,
 } from "lucide-react";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 interface NavigationProps {
@@ -61,7 +59,11 @@ const Navigation = ({ className = "" }: NavigationProps) => {
       icon: <Linkedin className="h-5 w-5" />,
       href: "https://www.linkedin.com/in/om-prakash-nehra-695442252/",
     },
-    { name: "Resume", icon: <Download className="h-5 w-5" />, href: "#" },
+    {
+      name: "Email",
+      icon: <Mail className="h-5 w-5" />,
+      href: "https://mail.google.com/mail/?view=cm&to=omprakashnehra078@gmail.com",
+    },
   ];
 
   return (
@@ -81,13 +83,13 @@ const Navigation = ({ className = "" }: NavigationProps) => {
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
-  
+
       {/* Header */}
       <div className="p-6 border-b border-white/10">
         <h2 className="text-2xl font-bold leading-tight">Om Prakash Nehra</h2>
         <p className="text-sm text-slate-400 mt-1">Full Stack Developer</p>
       </div>
-  
+
       {/* Navigation Links */}
       <nav className="flex-1 overflow-y-auto py-6 px-4">
         <ul className="space-y-2">
@@ -105,10 +107,10 @@ const Navigation = ({ className = "" }: NavigationProps) => {
           ))}
         </ul>
       </nav>
-  
+
       {/* Social Links */}
       <div className="p-6 border-t border-white/10">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center gap-4">
           {socialLinks.map((link) => (
             <a
               key={link.name}
