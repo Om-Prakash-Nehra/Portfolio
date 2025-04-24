@@ -22,14 +22,14 @@ const certifications = [
     description:
       "Took an in-depth course on Coursera (University of Michigan) covering PHP, MySQL, session management, form handling, and CRUD operations. Built small-scale web apps demonstrating full-stack capabilities.",
     imageUrl: "/certificates/php-webapp.png",
-    verifyUrl: "https://www.coursera.org/learn/web-applications-php",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/FGD4T7V1JGEI",
   },
   {
     title: "Server-Side JavaScript with Node.js",
     description:
       "Learned back-end development using Node.js on Coursera. Built APIs, handled asynchronous logic, and implemented authentication. Emphasis on Express.js, RESTful services, and real-time data handling.",
     imageUrl: "/certificates/nodejs-server.png",
-    verifyUrl: "https://www.coursera.org/learn/server-side-javascript-with-nodejs?",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/3TPNSTDVQQPR",
   },
 ];
 
