@@ -37,7 +37,7 @@ const AboutMe = () => {
           transition={{ delay: 0.2 }}
           className="text-lg leading-relaxed text-slate-300 text-center max-w-3xl mx-auto"
         >
-          Hi! I’m <span className="text-blue-400 font-semibold">Om Prakash Nehra</span> — a passionate
+          Hello there! I’m <span className="text-blue-400 font-semibold">Om Prakash Nehra</span> — a passionate
           <span className="text-yellow-300 font-medium"> Full Stack Web Developer</span> currently pursuing
           <span className="text-pink-400 font-medium"> B.Tech in CSE</span> at LPU. I enjoy creating impactful digital experiences using
           <span className="text-green-300 font-medium"> React, Node.js, PHP</span>, and more.

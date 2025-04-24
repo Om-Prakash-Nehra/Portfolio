@@ -54,10 +54,12 @@ const HeroSection = ({
 
           {/* Text */}
           <div className="max-w-xl space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-transparent bg-clip-text">
               {title}
             </h1>
-            <p className="text-xl text-white/90 font-medium">{tagline}</p>
+            <p className="text-xl font-semibold bg-gradient-to-r from-yellow-300 to-red-400 text-transparent bg-clip-text">
+              {tagline}
+            </p>
             <p className="text-base md:text-lg text-white/80">{introduction}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">

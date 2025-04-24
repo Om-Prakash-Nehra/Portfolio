@@ -61,18 +61,16 @@ const Certifications = () => {
               {cert.description}
             </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="mt-3 hidden group-hover:flex justify-center"
-            >
-              <img
-                src={cert.imageUrl}
-                alt={`${cert.title} Certificate`}
-                className="w-full max-w-md rounded-md border border-gray-300 shadow-md"
-              />
-            </motion.div>
+            <div
+  className="mt-3 hidden group-hover:flex justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
+>
+  <img
+    src={cert.imageUrl}
+    alt={`${cert.title} Certificate`}
+    className="w-full max-w-md rounded-md border border-gray-300 shadow-md"
+  />
+</div>
+
           </motion.div>
         ))}
       </div>
