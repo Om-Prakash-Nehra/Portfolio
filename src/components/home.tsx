@@ -10,6 +10,7 @@ import { Separator } from "./ui/separator";
 import { Badge } from "./ui/badge";
 import AboutMe from "../components/AboutMe";
 import Certifications from "./Certifications";
+import { SiLeetcode, SiHackerrank } from "react-icons/si";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import {
   Tooltip,
@@ -120,18 +121,26 @@ const HomePage = () => {
       id: 1,
       platform: "LeetCode",
       achievement: "150+ DSA problems",
+      description: "Solved a wide range of problems on data structures and algorithms, consistently improving problem-solving speed and accuracy.",
+      icon: <SiLeetcode className="text-yellow-400 text-3xl" />,
     },
     {
       id: 2,
       platform: "HackerRank",
       achievement: "Top 10% C++ badge",
+      description: "Recognized in the top percentile globally for C++ programming skills based on performance in timed challenges.",
+      icon: <SiHackerrank className="text-green-500 text-3xl" />,
     },
     {
       id: 3,
       platform: "Leetcode",
       achievement: "100 Days Badge 2025",
+      description: "Maintained a 100-day streak of solving problems, demonstrating dedication and continuous learning.",
+      icon: <SiLeetcode className="text-yellow-400 text-3xl" />,
     },
   ];
+  
+  
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -293,43 +302,55 @@ const HomePage = () => {
           </section>
 
           {/* Hackathons Section */}
-          <section id="hackathons" className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={staggerContainer}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
-                💻 Competitive Programming
-              </h2>
+          <section
+  id="hackathons"
+  className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]"
+>
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={staggerContainer}
+    className="max-w-4xl mx-auto"
+  >
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">
+      💻 Achievements
+    </h2>
+    <p className="text-center text-white/80 max-w-2xl mx-auto mb-12">
+      A showcase of dedication to continuous learning and excellence in programming across various platforms.
+    </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {hackathons.map((hack) => (
-                  <motion.div
-                    key={hack.id}
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    className="rounded-xl overflow-hidden"
-                  >
-                    <Card className="h-full bg-white/5 backdrop-blur-sm border border-white/10 hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                        <h3 className="text-xl font-bold text-white">{hack.platform}</h3>
-                        <Badge
-                          variant="secondary"
-                          className="px-3 py-1 text-sm bg-blue-600/80 text-white hover:bg-blue-700/80"
-                        >
-                          {hack.achievement}
-                        </Badge>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </section>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {hackathons.map((hack) => (
+        <motion.div
+          key={hack.id}
+          variants={fadeInUp}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          className="rounded-xl overflow-hidden"
+        >
+          <Card className="h-full bg-white/5 backdrop-blur-sm border border-white/10 hover:shadow-lg transition-all duration-300">
+          <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
+  <div className="flex items-center gap-2">
+    {hack.icon}
+    <h3 className="text-xl font-bold text-white">{hack.platform}</h3>
+  </div>
+  <Badge
+    variant="secondary"
+    className="px-3 py-1 text-sm bg-blue-600/80 text-white hover:bg-blue-700/80"
+  >
+    {hack.achievement}
+  </Badge>
+  <p className="text-sm text-white/70">{hack.description}</p>
+</CardContent>
+
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </motion.div>
+</section>
+
 
           {/* Contact Section */}
           <section id="contact" className="py-20 px-6 md:px-12 bg-gradient-to-br from-[#1e1e2f] to-[#151522]">
