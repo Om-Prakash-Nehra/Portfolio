@@ -4,32 +4,32 @@ import { BadgeCheck } from "lucide-react";
 
 const certifications = [
   {
+    title: "Introduction to Internet of Things",
+    description:
+      "Studied IoT concepts through NPTEL (IIT Kharagpur), including embedded systems, sensors, actuators, and data communication protocols. Designed mock IoT applications to understand real-world use cases and architecture.",
+    imageUrl: "/certificates/iot.png",
+    verifyUrl: "https://onlinecourses.nptel.ac.in/noc24_cs115/preview",
+  },
+  {
     title: "Data Structures and Algorithms using C/C++",
     description:
       "Completed a comprehensive DSA course, focusing on time complexity, recursion, sorting, and dynamic programming. Gained strong problem-solving skills through 100+ coding challenges and timed assessments.",
     imageUrl: "/certificates/dsa-cpp.png",
-    verifyUrl: "https://example.com/verify/dsa-cpp",
+    verifyUrl: "https://pro.e-box.co.in/course/show/4540",
   },
   {
     title: "Building Web Applications in PHP",
     description:
       "Took an in-depth course on Coursera (University of Michigan) covering PHP, MySQL, session management, form handling, and CRUD operations. Built small-scale web apps demonstrating full-stack capabilities.",
     imageUrl: "/certificates/php-webapp.png",
-    verifyUrl: "https://example.com/verify/php",
-  },
-  {
-    title: "Introduction to Internet of Things",
-    description:
-      "Studied IoT concepts through NPTEL (IIT Kharagpur), including embedded systems, sensors, actuators, and data communication protocols. Designed mock IoT applications to understand real-world use cases and architecture.",
-    imageUrl: "/certificates/iot.png",
-    verifyUrl: "https://example.com/verify/iot",
+    verifyUrl: "https://www.coursera.org/learn/web-applications-php",
   },
   {
     title: "Server-Side JavaScript with Node.js",
     description:
       "Learned back-end development using Node.js on Coursera. Built APIs, handled asynchronous logic, and implemented authentication. Emphasis on Express.js, RESTful services, and real-time data handling.",
     imageUrl: "/certificates/nodejs-server.png",
-    verifyUrl: "https://example.com/verify/nodejs",
+    verifyUrl: "https://www.coursera.org/learn/server-side-javascript-with-nodejs?",
   },
 ];
 

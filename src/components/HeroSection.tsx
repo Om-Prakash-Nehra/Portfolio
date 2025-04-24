@@ -47,7 +47,7 @@ const HeroSection = ({
               alt="Profile"
               className="w-40 h-40 rounded-full border-4 border-white shadow-md object-cover"
             />
-            <span className="absolute bottom-0 right-0 bg-green-500 text-xs font-semibold text-white px-2 py-1 rounded-full animate-pulse">
+            <span className="absolute bottom-0 right-0 bg-blue-500 text-xs font-semibold text-white px-2 py-1 rounded-full animate-pulse">
               👨‍💻 Open to Work
             </span>
           </div>

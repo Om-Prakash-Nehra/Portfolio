@@ -103,10 +103,10 @@ const HomePage = () => {
     {
       id: 1,
       title: "Summer Training in Data Structures and Algorithms (DSA)",
-      company: "E-box",
+      company: "",
       duration: "2 months",
       details: [
-        "Learned and implemented core data structures and algorithms using C/C++",
+        "Learned and implemented core data structures and algorithms using C++",
         "Solved 100+ coding problems, improving logic and problem-solving skills",
         "Participated in timed contests and debugging exercises",
         "Gained deep understanding of arrays, trees, sorting, searching, and recursion",
